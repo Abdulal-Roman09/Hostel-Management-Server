@@ -606,7 +606,7 @@ async function run() {
     // add comments
     app.post("/foods/:id/comments", verifyFBToken, async (req, res) => {
       const id = req.params.id;
-      const newComment = req.body; // expect userName, userEmail, text, createdAt
+      const newComment = req.body; 
 
       try {
         const result = await recipesCollection.updateOne(
