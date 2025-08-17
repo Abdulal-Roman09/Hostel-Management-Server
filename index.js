@@ -444,10 +444,10 @@ async function run() {
 
         const filter = category ? { category } : {};
 
-        // Get total count matching filter
+       
         const total = await recipesCollection.countDocuments(filter);
 
-        // Fetch paginated results
+
         const meals = await recipesCollection
           .find(filter)
           .skip(skip)
