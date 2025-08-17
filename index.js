@@ -515,7 +515,7 @@ async function run() {
       res.send(result);
     });
     // upcomming meals
-    // Post upcomming meals
+
     app.post("/upcoming-meals", verifyAdmin, async (req, res) => {
       const meal = req.body;
       const result = await upcomingMealsCollection.insertOne(meal);
