@@ -473,7 +473,6 @@ async function run() {
       try {
         const { id } = req.params;
 
-        // Validate ObjectId
         if (!ObjectId.isValid(id)) {
           return res
             .status(400)
@@ -482,7 +481,6 @@ async function run() {
 
         const updatedData = req.body;
 
-        // Remove _id if it exists to avoid MongoDB error
         if (updatedData._id) {
           delete updatedData._id;
         }
