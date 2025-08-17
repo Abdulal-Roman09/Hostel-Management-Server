@@ -410,8 +410,6 @@ async function run() {
         const category = req.query.category;
 
         const skip = (page - 1) * limit;
-
-        // Build query object
         const query = {
           ...(category && category !== "All Meals" ? { category } : {}),
           ...(search ? { productName: { $regex: search, $options: "i" } } : {}),
